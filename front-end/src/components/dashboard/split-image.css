@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.split-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.quadrant {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-image: url("/images/SplitImage.jpeg"); /* using public image */
+  background-size: 300px 300px;
+  transition: transform 0.3s ease;
+}
+
+.quadrant-1 {
+  top: 0;
+  left: 0;
+  background-position: top left;
+}
+
+.quadrant-2 {
+  top: 0;
+  right: 0;
+  background-position: top right;
+}
+
+.quadrant-3 {
+  bottom: 0;
+  left: 0;
+  background-position: bottom left;
+}
+
+.quadrant-4 {
+  bottom: 0;
+  right: 0;
+  background-position: bottom right;
+}
+
+.split-image-container:hover .quadrant-1 {
+  transform: translate(-10px, -10px);
+}
+
+.split-image-container:hover .quadrant-2 {
+  transform: translate(10px, -10px);
+}
+
+.split-image-container:hover .quadrant-3 {
+  transform: translate(-10px, 10px);
+}
+
+.split-image-container:hover .quadrant-4 {
+  transform: translate(10px, 10px);
+}

@@ -1,0 +1,153 @@
+.jee-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
+  min-height: 100vh;
+}
+
+.jee-header {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.jee-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.jee-header p {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.jee-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.jee-overview, .jee-structure, .jee-resources, .jee-toppers, .jee-videos {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jee-overview h2, .jee-structure h2, .jee-resources h2, .jee-toppers h2, .jee-videos h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.structure-grid, .resources-grid, .toppers-grid, .videos-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.structure-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.resources-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.toppers-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.videos-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.structure-card, .resource-card, .topper-card, .video-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.structure-card:hover, .resource-card:hover, .topper-card:hover, .video-card:hover {
+  transform: translateY(-5px);
+}
+
+.structure-card h3, .resource-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.structure-card ul, .resource-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.structure-card li, .resource-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.structure-card li:last-child, .resource-card li:last-child {
+  border-bottom: none;
+}
+
+.topper-card {
+  text-align: center;
+}
+
+.topper-name {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.topper-score {
+  color: #7f8c8d;
+}
+
+.video-card iframe {
+  border-radius: 8px;
+}
+
+.video-card p {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.jee-action {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.jee-join-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.jee-join-btn:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .jee-header h1 {
+    font-size: 2rem;
+  }
+  
+  .structure-grid, .resources-grid, .toppers-grid, .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}

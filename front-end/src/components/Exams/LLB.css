@@ -1,0 +1,387 @@
+.llb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+.llb-header {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding: 10px 15px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  background: #7f8c8d;
+}
+
+.llb-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.llb-header p {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.llb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.llb-section {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.llb-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.overview-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.overview-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.overview-card li {
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.overview-card li:last-child {
+  border-bottom: none;
+}
+
+/* Exam Pattern */
+.exam-pattern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.pattern-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.pattern-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.pattern-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pattern-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+}
+
+.pattern-label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.pattern-value {
+  color: #7f8c8d;
+  text-align: right;
+}
+
+/* Resources Grid */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.resource-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.resource-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.resource-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resource-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.resource-card li:last-child {
+  border-bottom: none;
+}
+
+/* Preparation Strategy */
+.strategy-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.strategy-card, .tips-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.strategy-card h3, .tips-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.strategy-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline-item {
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  border-left: 4px solid #3498db;
+}
+
+.timeline-item h4 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.tips-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tips-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tips-card li:last-child {
+  border-bottom: none;
+}
+
+/* Toppers Grid */
+.toppers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.topper-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.topper-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.topper-name {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.topper-score {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.topper-college {
+  color: #7f8c8d;
+}
+
+/* Videos Grid */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.video-card iframe {
+  border-radius: 8px;
+}
+
+.video-card p {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Call to Action */
+.llb-cta {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.llb-cta h2 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.llb-cta p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-btn.primary {
+  background: #e74c3c;
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background: #c0392b;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-btn.secondary:hover {
+  background: white;
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .strategy-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .exam-pattern {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .llb-header h1 {
+    font-size: 2rem;
+  }
+  
+  .back-button {
+    position: relative;
+    margin-bottom: 15px;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-cards,
+  .resources-grid,
+  .toppers-grid,
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .llb-section {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,33 @@
+/* Css for nav bar only */
+.navbar-blog {
+  background-color: #002147; /* Dark Blue */
+}
+
+.navbar-blog .nav-link,
+.navbar-blog .navbar-brand {
+  color: white !important;
+}
+
+.navbar-blog .nav-link:hover,
+.navbar-blog .navbar-brand:hover {
+  color: #a6c9ff !important;
+}
+
+/* Start for Footer Css */
+.footer-blog {
+  background-color: #002147; /* Dark blue */
+}
+.footer-blog h5 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.footer-blog a:hover {
+  color: #a6c9ff;
+}
+
+.dashbord_blog_image_height
+{
+  height: 180px;
+}
+
+

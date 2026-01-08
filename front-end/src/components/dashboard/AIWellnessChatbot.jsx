@@ -16,7 +16,7 @@ const AIWellnessChatbot = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:4004/api/chatbot', {
+      const response = await fetch('/api/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + localStorage.getItem('token') },
         body: JSON.stringify({ message: userMessage.text }),

@@ -14,9 +14,11 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes"); // adjust path if needed
 const moodRoutes = require("./routes/moodRoutes"); // new mood routes
 const journalRoutes = require("./routes/journalRoutes"); // new journal routes
+const chatbotRoutes = require("./routes/chatbotRoutes"); // new chatbot routes
 app.use("/api", userRoutes);
 app.use("/api", moodRoutes);
 app.use("/api", journalRoutes);
+app.use("/api", chatbotRoutes);
 
 // ✅ Connect to MongoDB only ONCE
 mongoose
@@ -34,6 +36,6 @@ mongoose
     console.error("❌ MongoDB connection failed:", err);
   });
 
-  // const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-  // Remove duplicate connection block below as it is redundant
+// Remove duplicate connection block below as it is redundant

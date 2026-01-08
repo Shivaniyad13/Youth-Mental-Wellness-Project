@@ -16,16 +16,16 @@ export const Header = () => {
 
   // Search suggestions
   const searchSuggestions = [
-    { id: 'neet', name: 'NEET Exam', type: 'exam', path: '/dashboard?exam=neet' },
-    { id: 'jee', name: 'JEE Exam', type: 'exam', path: '/dashboard?exam=jee' },
-    { id: 'ssc', name: 'SSC Exam', type: 'exam', path: '/dashboard?exam=ssc' },
-    { id: 'upsc', name: 'UPSC Exam', type: 'exam', path: '/dashboard?exam=upsc' },
-    { id: 'llb', name: 'LLB Exam', type: 'exam', path: '/dashboard?exam=llb' },
-    { id: 'yoga', name: 'Yoga for Students', type: 'content', path: '/dashboard#yoga' },
-    { id: 'books', name: 'Book Store', type: 'content', path: '/dashboard#book-store' },
-    { id: 'todo', name: 'To-Do App', type: 'tool', path: '/dashboard#todo-app' },
+    { id: 'neet', name: 'NEET Exam', type: 'exam', path: '/neet' },
+    { id: 'jee', name: 'JEE Exam', type: 'exam', path: '/jee' },
+    { id: 'ssc', name: 'SSC Exam', type: 'exam', path: '/ssc' },
+    { id: 'upsc', name: 'UPSC Exam', type: 'exam', path: '/upsc' },
+    { id: 'llb', name: 'LLB Exam', type: 'exam', path: '/llb' },
+    { id: 'yoga', name: 'Yoga for Students', type: 'content', path: '/#yoga' },
+    { id: 'books', name: 'Book Store', type: 'content', path: '/#book-store' },
+    { id: 'todo', name: 'To-Do App', type: 'tool', path: '/#todo-app' },
     { id: 'tribute', name: 'Tribute Page', type: 'content', path: '/tribute-page' },
-    { id: 'meditation', name: 'Meditation', type: 'content', path: '/dashboard#meditation' },
+    { id: 'meditation', name: 'Meditation', type: 'content', path: '/#meditation' },
   ]
 
   const filteredSuggestions = searchQuery 
@@ -48,7 +48,7 @@ export const Header = () => {
       } else if (filteredSuggestions.length > 0) {
         navigate(filteredSuggestions[0].path) // fallback to first suggestion
       } else {
-        navigate(`/dashboard?search=${encodeURIComponent(searchQuery)}`)
+        navigate(`/?search=${encodeURIComponent(searchQuery)}`)
       }
 
       setSearchQuery('')

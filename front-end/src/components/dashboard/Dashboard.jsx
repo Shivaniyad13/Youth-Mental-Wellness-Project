@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./dashboard.css";
-import TributePage from "./TributePage"; 
-import TodoApp from "./TodoApp";
+import TributePage from "./TributePage";
+import TodoApp from "../Todoapp/TodoApp.jsx";
 import FAQ from "./FAQ";
 import BookStore from "../BookStore/BookStore";
 import ArtGallery from "../Artgallery/ArtGallery";
@@ -110,32 +110,72 @@ export const Dashboard = () => {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100 carousel-img" src="/images/SplitImage.jpeg" alt="First slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/SplitImage.jpeg"
+              alt="First slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100 carousel-img" src="/images/meditation.jpg" alt="Second slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/meditation.jpg"
+              alt="Second slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100 carousel-img" src="/images/slide4.jpg" alt="Third slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/slide4.jpg"
+              alt="Third slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100 carousel-img" src="/images/motive1.jpg" alt="Fourth slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/motive1.jpg"
+              alt="Fourth slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100 carousel-img" src="/images/motive2.png" alt="Fifth slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/motive2.png"
+              alt="Fifth slide"
+            />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100 carousel-img" src="/images/motive3.webp" alt="Sixth slide" />
+            <img
+              className="d-block w-100 carousel-img"
+              src="/images/motive3.webp"
+              alt="Sixth slide"
+            />
           </div>
         </div>
 
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Previous</span>
         </button>
 
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
@@ -145,7 +185,10 @@ export const Dashboard = () => {
         <div className="row">
           <div className="col-12 text-center mb-4">
             <h2>Yoga & Relaxation Techniques</h2>
-            <p className="lead">Discover practices that enhance focus, reduce stress, and improve academic performance</p>
+            <p className="lead">
+              Discover practices that enhance focus, reduce stress, and improve
+              academic performance
+            </p>
           </div>
         </div>
         {/* Your yoga cards... */}
@@ -156,13 +199,23 @@ export const Dashboard = () => {
         <div className="text">
           <h1>Warrior mind helps to boost your skill</h1>
           <p>
-            Many people who struggle with anxiety-related conditions are negatively affected by their worrisome thoughts. However, worry is just one aspect of anxiety.
+            Many people who struggle with anxiety-related conditions are
+            negatively affected by their worrisome thoughts. However, worry is
+            just one aspect of anxiety.
           </p>
-          <a href="https://en.wikipedia.org/wiki/Spice_Global" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://en.wikipedia.org/wiki/Spice_Global"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Explore more
           </a>
         </div>
-        <img src="/images/motive2.png" alt="Motivation" className="card-img-top" />
+        <img
+          src="/images/motive2.png"
+          alt="Motivation"
+          className="card-img-top"
+        />
       </div>
 
       <hr />
@@ -177,11 +230,21 @@ export const Dashboard = () => {
               <h2>{service.title}</h2>
               <p>{service.desc}</p>
               <div className="service-buttons">
-                <button type="button" className="servicebtn" onClick={() => setCurrentExam(service.examKey)}>
+                <button
+                  type="button"
+                  className="servicebtn"
+                  onClick={() => setCurrentExam(service.examKey)}
+                >
                   Explore {service.title}
                 </button>
-                <a href="https://forms.gle/eWaiHdpVGWx7uR3X7" target="_blank" rel="noopener noreferrer">
-                  <button type="button" className="servicebtn join-btn">Join Now</button>
+                <a
+                  href="https://forms.gle/eWaiHdpVGWx7uR3X7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button type="button" className="servicebtn join-btn">
+                    Join Now
+                  </button>
                 </a>
               </div>
             </div>

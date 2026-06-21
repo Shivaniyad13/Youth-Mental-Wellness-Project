@@ -1,8 +1,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 .footer {
-  background: linear-gradient(135deg, #102a43 0%, #0d47a1 100%);
-  color: #ecf0f1;
+  background: var(--header-gradient);
+  color: var(--text-on-primary);
   padding: 50px 0 20px;
   margin-top: 50px;
 }
@@ -33,7 +33,7 @@
 .footer-contact h3 {
   font-size: 1.15rem;
   margin-bottom: 20px;
-  color: #81a9ff;
+  color: var(--primary-1);
   position: relative;
   padding-bottom: 10px;
 }
@@ -47,7 +47,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: #ff6f00;
+  background: var(--accent);
   border-radius: 999px;
 }
 
@@ -94,7 +94,7 @@
 
 .contact-item svg,
 .contact-item i {
-  color: #81a9ff;
+  color: var(--primary-1);
   min-width: 24px;
 }
 

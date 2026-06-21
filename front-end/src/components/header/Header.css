@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .navbar-blog {
-  background: linear-gradient(135deg, #0d47a1 0%, #102a43 100%);
+  background: var(--header-gradient);
   padding: 0.9rem 1rem;
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
   position: sticky;
@@ -14,7 +14,7 @@
 }
 
 .navbar-brand {
-  color: #560606 !important;
+  color: var(--text-on-primary) !important;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -31,11 +31,11 @@
 }
 
 .navbar-blog .navbar-collapse {
-  background: linear-gradient(135deg, #0d47a1 0%, #102a43 100%);
+  background: var(--header-gradient);
 }
 
 .navbar-blog .navbar-nav .nav-link {
-  color: #2c0505 !important;
+  color: var(--text-on-primary) !important;
 }
 
 .navbar-toggler {
@@ -51,10 +51,10 @@
 }
 
 .nav-pill .nav-link {
-  color: rgba(229, 210, 9, 0.9) !important;
+  color: var(--nav-link-color) !important;
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .nav-pill .nav-link:hover {
@@ -77,7 +77,7 @@
 
 .btn-nav-primary {
   background: #ffffff;
-  color: #0d47a1;
+  color: var(--primary-1);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -104,7 +104,7 @@
 .search-container .form-control {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--search-bg);
   color: #fff;
   min-height: 46px;
 }

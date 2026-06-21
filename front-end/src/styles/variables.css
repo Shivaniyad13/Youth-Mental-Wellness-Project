@@ -1,0 +1,12 @@
+:root {
+  --primary-1: #0d47a1;
+  --primary-2: #102a43;
+  --header-gradient: linear-gradient(135deg, var(--primary-1) 0%, var(--primary-2) 100%);
+  --accent: #ff6f00;
+  --muted: #cbd5e1;
+  --text-on-primary: #ecf0f1;
+  --nav-link-color: rgba(229, 210, 9, 0.9);
+  --search-bg: rgba(255, 255, 255, 0.12);
+  --transition-speed: 0.2s;
+  --container-max-width: 1200px;
+}

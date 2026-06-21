@@ -28,6 +28,8 @@ export const Login = () => {
       const userRes = await axios.post("http://localhost:4004/api/login", user);
       if (userRes.status === 201) {
         localStorage.setItem("token", userRes.data.token);
+        // Dispatch custom event for Header to listen
+        window.dispatchEvent(new Event("login"));
         toast.success(userRes.data.message);
         navigate("/");
       }

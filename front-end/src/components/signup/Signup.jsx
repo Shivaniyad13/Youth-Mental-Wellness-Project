@@ -37,20 +37,28 @@ export const Signup = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault(); // Not reload page
-    // console.log(user);
     try {
       const response = await axios.post(
         "http://localhost:4004/api/users",
-        user
+        user,
       );
       console.log(response);
       if (response.status === 201) {
         toast.success(response.data.message);
+        // If token is returned on signup, store it and show logout
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+          window.dispatchEvent(new Event("login"));
+          setTimeout(() => navigate("/"), 1000);
+        } else {
+          // Otherwise, redirect to login
+          setTimeout(() => navigate("/login"), 1500);
+        }
       }
     } catch (err) {
       console.log(err);
       if (err.response && err.response.data && err.response.data.message) {
-        toast.error(err.response.data.message); // Server‑side message
+        toast.error(err.response.data.message); // Server-side message
       } else {
         toast.error("Something went wrong"); // Fallback
       }

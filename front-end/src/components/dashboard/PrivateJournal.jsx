@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import './PrivateJournal.css';
+import React, { useState, useEffect } from "react";
+import "./PrivateJournal.css";
 
 const PrivateJournal = () => {
-  const [journalText, setJournalText] = useState('');
+  const [journalText, setJournalText] = useState("");
   const [entries, setEntries] = useState([]);
-  const [aiSuggestion, setAiSuggestion] = useState('');
+  const [aiSuggestion, setAiSuggestion] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,9 +13,9 @@ const PrivateJournal = () => {
 
   const fetchJournalEntries = async () => {
     try {
-      const res = await fetch('/api/journal', {
+      const res = await fetch("/api/journal", {
         headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
       const data = await res.json();
@@ -23,33 +23,33 @@ const PrivateJournal = () => {
         setEntries(data.journals);
       }
     } catch (error) {
-      console.error('Failed to fetch journal entries', error);
+      console.error("Failed to fetch journal entries", error);
     }
   };
 
   const submitEntry = async () => {
     if (!journalText.trim()) return;
     setLoading(true);
-    setAiSuggestion('');
+    setAiSuggestion("");
     try {
-      const res = await fetch('/api/journal', {
-        method: 'POST',
+      const res = await fetch("/api/journal", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({ text: journalText }),
       });
       const data = await res.json();
       if (data.success) {
-        setJournalText('');
+        setJournalText("");
         fetchJournalEntries();
         fetchAiSuggestion(journalText);
       } else {
-        alert('Failed to save journal entry');
+        alert("Failed to save journal entry");
       }
     } catch (error) {
-      alert('Error saving journal entry');
+      alert("Error saving journal entry");
     } finally {
       setLoading(false);
     }
@@ -57,11 +57,11 @@ const PrivateJournal = () => {
 
   const fetchAiSuggestion = async (text) => {
     try {
-      const res = await fetch('/api/journal/suggestion', {
-        method: 'POST',
+      const res = await fetch("/api/journal/suggestion", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({ text }),
       });
@@ -69,10 +69,10 @@ const PrivateJournal = () => {
       if (data.success) {
         setAiSuggestion(data.suggestion);
       } else {
-        setAiSuggestion('No suggestion available.');
+        setAiSuggestion("No suggestion available.");
       }
     } catch (error) {
-      setAiSuggestion('Error fetching suggestion.');
+      setAiSuggestion("Error fetching suggestion.");
     }
   };
 
@@ -103,7 +103,8 @@ const PrivateJournal = () => {
       <ul>
         {entries.map((entry) => (
           <li key={entry._id}>
-            <strong>{new Date(entry.date).toLocaleString()}:</strong> {entry.text}
+            <strong>{new Date(entry.date).toLocaleString()}:</strong>{" "}
+            {entry.text}
           </li>
         ))}
       </ul>

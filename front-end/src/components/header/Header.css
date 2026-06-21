@@ -35,7 +35,7 @@
 }
 
 .navbar-blog .navbar-nav .nav-link {
-  color: #ffffff !important;
+  color: #876406 !important;
   font-weight: 600;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -63,7 +63,7 @@
 .nav-pill .nav-link:focus,
 .nav-pill .nav-link.active {
   background: rgba(255, 255, 255, 0.18);
-  color: #ffeb3b !important;
+  color: #ff6c3b !important;
 }
 
 .nav-button {
@@ -114,7 +114,7 @@
 }
 
 .search-container .form-control:focus {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(246, 230, 63, 0.18);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -125,7 +125,7 @@
 .search-container .btn {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(218, 168, 4, 0.14);
   color: #f9bc43;
   min-width: 52px;
 }

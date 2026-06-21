@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const MoodEntry = require('../models/MoodEntry');
+const dbHelper = require('../utils/dbHelper');
 const jwt = require('jsonwebtoken');
 const jwtsecret = process.env.JWT_SECRET || 'devSecret';
 
@@ -23,7 +23,7 @@ const authenticateJWT = (req, res, next) => {
 // Get mood history for authenticated user
 router.get('/mood', authenticateJWT, async (req, res) => {
   try {
-    const moods = await MoodEntry.find({ userId: req.user._id }).sort({ date: -1 });
+    const moods = await dbHelper.findMoodsByUserId(req.user._id);
     res.json({ success: true, moods });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Failed to fetch mood history' });
@@ -37,8 +37,7 @@ router.post('/mood', authenticateJWT, async (req, res) => {
     if (!mood) {
       return res.status(400).json({ success: false, message: 'Mood is required' });
     }
-    const newEntry = new MoodEntry({ userId: req.user._id, mood, date: new Date() });
-    await newEntry.save();
+    await dbHelper.createMood({ userId: req.user._id, mood, date: new Date() });
     res.json({ success: true, message: 'Mood saved' });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Failed to save mood' });

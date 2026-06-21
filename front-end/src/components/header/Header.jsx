@@ -9,7 +9,7 @@ export const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(false)
 
   useEffect(() => {
-    if (localStorage.getItem("authToken")) {
+    if (localStorage.getItem("token")) {
       setStatus(true)
     }
   }, [])
@@ -65,7 +65,7 @@ export const Header = () => {
   const addBlog = () => navigate("/add-blog")
   const goToBlogList = () => navigate("/blog-list")
   const logout = () => {
-    localStorage.removeItem("authToken")
+    localStorage.removeItem("token")
     navigate("/")
     setStatus(false)
   }
@@ -102,10 +102,10 @@ export const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* Links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"  style={{backgroundColor: "#ff6f00", color: "#fff", fontWeight: "600", boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)", borderRadius: "6px", padding: "6px 16px", transition: "all 0.3s ease"}}><Link className="nav-link text-white" to="/">Home</Link></li>
-            <li className="nav-item"  style={{backgroundColor: "#ff6f00", color: "#fff", fontWeight: "600", boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)", borderRadius: "6px", padding: "6px 16px", transition: "all 0.3s ease"}}><Link className="nav-link text-white" to="/about-us">About Us</Link></li>
-            <li className="nav-item"  style={{backgroundColor: "#ff6f00", color: "#fff", fontWeight: "600", boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)", borderRadius: "6px", padding: "6px 16px", transition: "all 0.3s ease"}}><Link className="nav-link text-white" to="/contact-us">Contact Us</Link></li>
-            <li className="nav-item"  style={{backgroundColor: "#ff6f00", color: "#fff", fontWeight: "600", boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)", borderRadius: "6px", padding: "6px 16px", transition: "all 0.3s ease"}}><Link className="nav-link text-white" to="/tribute-page">Tribute Page</Link></li>
+            <li className="nav-item nav-pill"><Link className="nav-link text-white" to="/">Home</Link></li>
+            <li className="nav-item nav-pill"><Link className="nav-link text-white" to="/about-us">About Us</Link></li>
+            <li className="nav-item nav-pill"><Link className="nav-link text-white" to="/contact-us">Contact Us</Link></li>
+            <li className="nav-item nav-pill"><Link className="nav-link text-white" to="/tribute-page">Tribute Page</Link></li>
           </ul>
 
           {/* Search Bar */}
@@ -146,7 +146,7 @@ export const Header = () => {
           <ul className="navbar-nav">
             {status ? (
               <li className="nav-item dropdown">
-                <button className="btn btn-danger dropdown-toggle" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="btn btn-danger dropdown-toggle nav-button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
                   Account
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
@@ -159,12 +159,12 @@ export const Header = () => {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="btn" style={{backgroundColor: "#0d47a1", color: "#fff", marginRight: "10px", fontWeight: "500"}} to="/login">
+                  <Link className="btn nav-button btn-nav-primary" to="/login">
                     <i className="bi bi-box-arrow-in-right me-1"></i> Login
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn" style={{backgroundColor: "#ff6f00", color: "#fff", fontWeight: "600", boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)", borderRadius: "6px", padding: "6px 16px", transition: "all 0.3s ease"}} to="/sign-up">
+                  <Link className="btn nav-button btn-nav-accent" to="/sign-up">
                     <i className="bi bi-person-plus-fill me-1"></i> Register
                   </Link>
                 </li>

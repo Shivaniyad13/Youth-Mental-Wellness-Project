@@ -26,27 +26,29 @@ import TodoApp from "./components/Todoapp/TodoApp";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      {/* <Slidebar /> */}
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/jee" element={<JEE />} />
-        <Route path="/ssc" element={<SSC />} />
-        <Route path="/neet" element={<NEET />} />
-        <Route path="/upsc" element={<UPSC />} />
-        {<Route path="/llb" element={<LLB />} />}
-        <Route path="/about-us" element={<About />} />
-        <Route path="/contact-us" element={<Contact />} />
-        <Route path="/tribute-page" element={<TributePage />} />
-        <Route path="/book-store" element={<BookStore />} />
-        <Route path="/todo-app" element={<TodoApp />} />
-        <Route path="/sign-up" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/add-blog" element={<Addblog />} />
-        <Route path="*" element={<Pagenotfound />} />
-      </Routes>
-
-      <Footer />
+      <div className="app-shell">
+        <Header />
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/jee" element={<JEE />} />
+            <Route path="/ssc" element={<SSC />} />
+            <Route path="/neet" element={<NEET />} />
+            <Route path="/upsc" element={<UPSC />} />
+            {<Route path="/llb" element={<LLB />} />}
+            <Route path="/about-us" element={<About />} />
+            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/tribute-page" element={<TributePage />} />
+            <Route path="/book-store" element={<BookStore />} />
+            <Route path="/todo-app" element={<TodoApp />} />
+            <Route path="/sign-up" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/add-blog" element={<Addblog />} />
+            <Route path="*" element={<Pagenotfound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

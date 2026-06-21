@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var user=require("../models/User");
+const dbHelper = require('../utils/dbHelper');
 
 /* for password hasing concept */
 const bcrypt = require('bcrypt');
@@ -18,7 +18,7 @@ router.post("/users",async(req,res)=>{
   const { name, email, mobile, password } = req.body;
 
   /*   Check duplicate email  ----------------------- */
-  const emailExists = await user.findOne({ email });
+  const emailExists = await dbHelper.findUserByEmail(email);
   if (emailExists) {
     return res.status(400).json({
       success: false,
@@ -27,7 +27,7 @@ router.post("/users",async(req,res)=>{
   }
 
   /*  Check duplicate mobile  ---------------------- */
-  const mobileExists = await user.findOne({ mobile });
+  const mobileExists = await dbHelper.findUserByMobile(mobile);
   if (mobileExists) {
     return res.status(400).json({
       success: false,
@@ -39,7 +39,7 @@ router.post("/users",async(req,res)=>{
   const hash = bcrypt.hashSync(password, saltRounds);
   //   console.log(hash);
 
-  const data = await user.create({ name, email, mobile, password: hash });
+  const data = await dbHelper.createUser({ name, email, mobile, password: hash });
 
   return res.status(201).json({
     success: true,
@@ -58,7 +58,7 @@ router.post("/login",async(req,res)=>{
     const { username, password } = req.body;
 
     //  Find user by email
-    const userRecord = await user.findOne({ email: username });
+    const userRecord = await dbHelper.findUserByEmail(username);
 
     if (!userRecord) {
       return res.status(401).json({ success: false, message: 'Invalid credentials' });

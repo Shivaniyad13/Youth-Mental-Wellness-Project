@@ -3,7 +3,7 @@ import "./TributePage.css"; // styling alag file me hogi
 
 export default function TributePage() {
   const [tributes, setTributes] = useState(
-    JSON.parse(localStorage.getItem("tributes")) || []
+    JSON.parse(localStorage.getItem("tributes")) || [],
   );
   const [editIndex, setEditIndex] = useState(null);
   const [form, setForm] = useState({
@@ -13,9 +13,19 @@ export default function TributePage() {
     quote: "",
   });
 
+  // Todo list state
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || [],
+  );
+  const [taskInput, setTaskInput] = useState("");
+
   useEffect(() => {
     localStorage.setItem("tributes", JSON.stringify(tributes));
   }, [tributes]);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleInputChange = (e) => {
     const { id, value, files } = e.target;
@@ -95,6 +105,43 @@ export default function TributePage() {
     document.getElementById("image").value = "";
   };
 
+  // Task management functions
+  const addTask = () => {
+    if (taskInput.trim() === "") return;
+
+    const now = new Date();
+    const newTask = {
+      text: taskInput.trim(),
+      completed: false,
+      addedAt: now.toLocaleString(),
+      completedAt: null,
+    };
+    setTasks([...tasks, newTask]);
+    setTaskInput("");
+  };
+
+  const toggleComplete = (index) => {
+    const updated = [...tasks];
+    updated[index].completed = !updated[index].completed;
+    updated[index].completedAt = updated[index].completed
+      ? new Date().toLocaleString()
+      : null;
+    setTasks(updated);
+  };
+
+  const editTask = (index) => {
+    const newText = prompt("Edit task:", tasks[index].text);
+    if (newText && newText.trim() !== "") {
+      const updated = [...tasks];
+      updated[index].text = newText.trim();
+      setTasks(updated);
+    }
+  };
+
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="tribute-container">
       <header className="tribute-header">
@@ -146,10 +193,7 @@ export default function TributePage() {
               <p>{t.description}</p>
               <blockquote>"{t.quote}"</blockquote>
               <div className="card-buttons">
-                <button
-                  className="edit-btn"
-                  onClick={() => editTribute(index)}
-                >
+                <button className="edit-btn" onClick={() => editTribute(index)}>
                   Edit
                 </button>
                 <button
@@ -161,6 +205,62 @@ export default function TributePage() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Todo Section */}
+      <div className="todo-section">
+        <h2>📝 Check To-Do OR NOT</h2>
+
+        <div className="task-input">
+          <input
+            type="text"
+            placeholder="Add a new task..."
+            value={taskInput}
+            onChange={(e) => setTaskInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && addTask()}
+          />
+          <button onClick={addTask}>Add</button>
+        </div>
+
+        <div className="section">
+          <h3>Pending Tasks</h3>
+          <ul>
+            {tasks
+              .filter((t) => !t.completed)
+              .map((task, index) => (
+                <li key={index}>
+                  <span className="task-text">{task.text}</span>
+                  <span className="task-time">Added: {task.addedAt}</span>
+                  <div className="actions">
+                    <button onClick={() => toggleComplete(index)}>Done</button>
+                    <button onClick={() => editTask(index)}>Edit</button>
+                    <button onClick={() => deleteTask(index)}>Delete</button>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </div>
+
+        <div className="section">
+          <h3>Completed Tasks</h3>
+          <ul>
+            {tasks
+              .filter((t) => t.completed)
+              .map((task, index) => (
+                <li key={index}>
+                  <span className="task-text completed">{task.text}</span>
+                  <span className="task-time">
+                    Completed: {task.completedAt}
+                  </span>
+                  <div className="actions">
+                    <button onClick={() => toggleComplete(index)}>Undo</button>
+                    <button onClick={() => editTask(index)}>Edit</button>
+                    <button onClick={() => deleteTask(index)}>Delete</button>
+                  </div>
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
     </div>

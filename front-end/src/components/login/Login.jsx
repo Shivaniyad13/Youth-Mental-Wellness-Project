@@ -28,7 +28,7 @@ export const Login = () => {
       const userRes = await axios.post("http://localhost:4004/api/login", user);
       console.log(userRes);
       if (userRes.status === 201) {
-        localStorage.setItem("authToken", userRes.data.token);
+        localStorage.setItem("token", userRes.data.token);
         toast.success(userRes.data.message);
         navigate("/");
       }

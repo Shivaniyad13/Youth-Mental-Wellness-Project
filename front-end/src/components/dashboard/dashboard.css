@@ -1,376 +1,177 @@
+
 .carousel-img {
-  height: 60vh;          /* adjust as per your site layout (e.g., 100vh for fullscreen) */
-  object-fit: cover;     /* ensures image fills slide without distortion */
-}
-
-
-.custom-card {
-  height: 100%;
-  border: 2px solid #007bff; /* Blue border */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.custom-card img {
-  height: 200px; /* Fixed height for all images */
-  object-fit: cover; /* Keeps images looking good */
-}
-
-.custom-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: #0056b3; /* Darker border on hover */
-}
-
-/* Make all cards equal height inside a row */
-.row > .col-md-4 {
-  display: flex;
-}
-
-.custom-card {
-  flex: 1;
+  min-height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 32px 60px rgba(15, 23, 42, 0.14);
 }
 
 .main {
-  display: flex;
-  justify-content: space-around;
-  background-color:;
-
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 4rem auto 3rem;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.08);
 }
 
-.main a {
-  position: relative;
-  top: 2px;
-  width: 160px;
-  padding: 1px;
-  background-color: orange;
-  color: black;
-  font-size: 20px;
-  border-radius: 2px;
+.main .text h1 {
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+  color: #102a43;
+}
+
+.main .text p {
+  color: #5e6c84;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 540px;
+}
+
+.main .text a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding: 0.95rem 1.5rem;
+  background: #ff6f00;
+  color: #102a43;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.main .text a:hover {
+  background: #ff8f00;
+  transform: translateY(-2px);
 }
 
 .main img {
-  width: 33%;
-  margin-top: 33px;
-  justify-content: end;
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.1);
 }
 
-.main .text {
-  width: 500px;
-  margin-top: 62px;
-
-}
-
-.text h1 {
-  font-size: 66px;
-}
-
-.text p {
-  color: black;
-  margin-top: 2px;
-}
-
-.text button {
-   margin-top: 100px; */
-  border: none;
-  outline: none;
-  background-color: #ffa500;
-  font-size: 2px;
-  border-radius: 2px;
-  width: 13px;
-  height: 30px;
-}
 .subbars {
-    height: auto;
-    margin: 0px 30px;
-    color:black;
-    line-height: 40px;
-    margin-bottom: 100px;
-    padding: 30px 60px 40px 60px;
-    width: auto;
-    background:;
-    border: 1px solid #a398f6;
-    border-radius: 2px;
-    z-index: -1;
+  background: #ffffff;
+  border: 1px solid rgba(13, 71, 161, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  margin: 0 auto 4rem;
+  max-width: 1200px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
 }
 
-#bar2 p {
-    font-size: larger;
-    text-align: justify;
+.subbars h1 {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  margin-bottom: 1.25rem;
+  color: #102a43;
+  text-align: center;
 }
 
-#services {
-    width: 95vw;
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin: auto;
-    margin-bottom: 100px;
-}
-
-#services::-webkit-scrollbar {
-    display: none;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(300%);
-    }
-
-    to {
-        transform: translateX(-810%);
-    }
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .servicecont {
-    display: inline-block;
-    text-align: center;
-    /* background: red; */
-    margin: 0 20px;
-    animation-name: scroll;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 28px 50px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-#services h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.servicecont h2 {
-    margin: auto;
-    /* background: #000; */
-    width: auto;
-    text-align: center;
+.servicecont:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 60px rgba(15, 23, 42, 0.12);
 }
 
 .logo {
-    height: 200px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-.logo:hover {
-    padding-top: 10px;
-    transition: all linear 0.5s;
-
+.servicecont h2 {
+  font-size: 1.35rem;
+  margin: 1.2rem 1rem 0.75rem;
+  color: #102a43;
 }
 
-.pylogo {
-    height: 190px;
-    margin-top: 10px;
-
-}
-
-.pylogo:hover {
-    padding-top: 10px;
-    transition: all linear 0.1s;
+.servicecont p {
+  margin: 0 1.2rem 1.25rem;
+  color: #5e6c84;
+  line-height: 1.75;
 }
 
 .service-buttons {
   display: flex;
-  gap: 10px;
+  gap: 0.85rem;
   justify-content: center;
-  margin-top: 15px;
+  flex-wrap: wrap;
+  padding: 0 1.2rem 1.4rem;
 }
 
 .servicebtn {
-  padding: 8px 16px;
-  font-size: 16px;
-  color:black;
+  flex: 1 1 140px;
+  padding: 0.95rem 1rem;
+  font-size: 0.95rem;
+  color: white;
   border: none;
-  border-radius: 5px;
-  background: #3498db;
+  border-radius: 999px;
+  background: #0d47a1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background 0.25s ease;
 }
 
 .servicebtn:hover {
-  background: #2980b9;
   transform: translateY(-2px);
+  background: #0b3b82;
 }
 
 .join-btn {
-  background: #e74c3c;
+  background: #ff6f00;
+  color: #102a43;
 }
 
 .join-btn:hover {
-  background: #c0392b;
+  background: #ff8f00;
 }
 
-#course {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* background: #000; */
-
+#book-store,
+#todo-app,
+#ai-chatbot,
+#mood-tracking,
+#private-journal {
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-#firstrow {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-#secondrow {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    justify-content: center;
-}
-
-
-
-.rolbars {
-    height: auto;
-    color: aliceblue;
-    line-height: 40px;
-    padding: 60px 0;
-    padding-top: 40px;
-    width: 95vw;
-    background: #2a2762;
-    border: 1px solid #a398f6;
-    border-radius: 50px;
-    z-index: -1;
-    margin: auto;
-    margin-bottom: 100px;
-}
-
-/* Yoga cards */
-/* Yoga Cards Styling */
-.yoga-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.yoga-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.yoga-card .card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
-
-.yoga-card .card-body {
-  padding: 1.5rem;
-}
-
-.yoga-card .card-title {
-  color: #2c3e50;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.yoga-card .card-text {
-  color: #7f8c8d;
-  margin-bottom: 1.5rem;
-}
-
-.yoga-benefits {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-}
-
-.yoga-benefits h6 {
-  color: #2c3e50;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.yoga-benefits ul {
-  margin-bottom: 0;
-  padding-left: 1.2rem;
-}
-
-.yoga-benefits li {
-  color: #7f8c8d;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.yoga-card .card-footer {
-  background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 1rem 1.5rem;
-}
-
-.yoga-card .btn-primary {
-  background-color: #3498db;
-  border-color: #3498db;
-  border-radius: 30px;
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
-}
-
-.yoga-card .btn-primary:hover {
-  background-color: #2980b9;
-  border-color: #2980b9;
-  transform: translateY(-2px);
-}
-
-/* Balance Sheet Styling */
-.balance-sheet {
-  background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2rem;
-}
-
-.balance-sheet h3 {
-  color: #2c3e50;
-  font-weight: 600;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.balance-sheet h3:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #3498db;
-  border-radius: 2px;
-}
-
-.table th {
-  background-color: #2c3e50;
-  color: white;
-  border-color: #34495e;
-  font-weight: 500;
-}
-
-.table td {
-  vertical-align: middle;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .yoga-card {
-    margin-bottom: 2rem;
+@media (max-width: 992px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
   }
-  
-  .table-responsive {
-    overflow-x: auto;
+
+  .main img {
+    margin-top: 1.5rem;
   }
-  
-  .balance-sheet {
-    padding: 1.5rem;
+
+  .subbars {
+    padding: 1.75rem;
   }
 }

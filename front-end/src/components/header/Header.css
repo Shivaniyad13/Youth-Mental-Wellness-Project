@@ -1,48 +1,175 @@
-/* Search Container Styles */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+.navbar-blog {
+  background: linear-gradient(135deg, #0d47a1 0%, #102a43 100%);
+  padding: 0.9rem 1rem;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-blog .container-fluid {
+  gap: 1rem;
+}
+
+.navbar-brand {
+  color: #560606 !important;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand svg {
+  max-width: 190px;
+  height: auto;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-blog .navbar-collapse {
+  background: linear-gradient(135deg, #0d47a1 0%, #102a43 100%);
+}
+
+.navbar-blog .navbar-nav .nav-link {
+  color: #2c0505 !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) brightness(1.7);
+}
+
+.nav-pill {
+  margin: 0 0.25rem;
+}
+
+.nav-pill .nav-link {
+  color: rgba(229, 210, 9, 0.9) !important;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.nav-pill .nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #e08a44 !important;
+}
+
+.nav-button {
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  min-width: 120px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.btn-nav-primary {
+  background: #ffffff;
+  color: #0d47a1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-nav-primary:hover {
+  background: #e3f2fd;
+}
+
+.btn-nav-accent {
+  background: #ff6f00;
+  color: #102a43;
+  border: 1px solid transparent;
+}
+
+.btn-nav-accent:hover {
+  background: #ff8f00;
+}
+
 .search-container {
   position: relative;
-  width: 300px;
+  width: 320px;
+  max-width: 100%;
+}
+
+.search-container .form-control {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  min-height: 46px;
+}
+
+.search-container .form-control:focus {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-container ::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.search-container .btn {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  min-width: 52px;
+}
+
+.search-container .btn:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .suggestions-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.6rem);
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
   z-index: 1000;
-  max-height: 300px;
+  max-height: 320px;
   overflow-y: auto;
 }
 
 .suggestion-item {
-  padding: 10px 15px;
+  padding: 12px 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s;
+  gap: 0.85rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+  transition: background-color 0.2s ease;
 }
 
 .suggestion-item:hover {
-  background-color:black;
+  background: rgba(13, 71, 161, 0.06);
 }
 
 .suggestion-type {
   font-size: 0.7rem;
-  padding: 2px 8px;
-  border-radius: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
   margin-right: 10px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .suggestion-type.exam {
   background-color: #e3f2fd;
-  color: #1976d2;
+  color: #0d47a1;
 }
 
 .suggestion-type.content {
@@ -56,27 +183,32 @@
 }
 
 .suggestion-name {
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 0.95rem;
+  color: #102a43;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
+  .navbar-blog {
+    padding: 0.75rem 0.75rem;
+  }
+
   .search-container {
     width: 100%;
-    margin: 10px 0;
+    margin-top: 0.75rem;
   }
-  
+
   .navbar-nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
-  .navbar-nav .nav-item {
-    margin: 5px;
+
+  .nav-pill {
+    width: 100%;
+    margin: 0.35rem 0;
+  }
+
+  .nav-pill .nav-link {
+    text-align: center;
   }
 }
-
-/* Bootstrap Icons */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");

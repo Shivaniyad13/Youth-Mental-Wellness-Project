@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./dashboard.css";
 import TributePage from "./TributePage";
-import TodoApp from "../Todoapp/TodoApp.jsx";
+// import TodoApp from "../Todoapp/TodoApp.jsx";
 import FAQ from "./FAQ";
 import BookStore from "../BookStore/BookStore";
 import ArtGallery from "../Artgallery/ArtGallery";
@@ -64,7 +64,8 @@ export const Dashboard = () => {
       id: 1,
       title: "Clear JEE",
       img: "/images/jee.jpg",
-      desc: "Join our JEE explore web to gain valuable knowledge about JEE",
+      desc: "Join our JEE explore web to gain valuable knowledge about JEE.",
+      path: "/jee",
       examKey: "jee",
     },
     {
@@ -72,13 +73,15 @@ export const Dashboard = () => {
       title: "Clear SSC",
       img: "/images/ssc.jpg",
       desc: "Join our SSC strategy to gain valuable skills.",
+      path: "/ssc",
       examKey: "ssc",
     },
     {
       id: 3,
       title: "Clear NEET",
       img: "/images/neet.jpg",
-      desc: "Qualify NEET by exploring your seniors' history",
+      desc: "Qualify NEET by exploring your seniors' history.",
+      path: "/neet",
       examKey: "neet",
     },
     {
@@ -86,6 +89,7 @@ export const Dashboard = () => {
       title: "Civil Service",
       img: "/images/upsc.jpg",
       desc: "Get more experience with civil servants mentors.",
+      path: "/upsc",
       examKey: "upsc",
     },
     {
@@ -93,7 +97,29 @@ export const Dashboard = () => {
       title: "Join LLB",
       img: "/images/llb.png",
       desc: "Meet experienced judges and advocates in the LLB field.",
+      path: "/llb",
       examKey: "llb",
+    },
+    {
+      id: 6,
+      title: "Yoga & Mindfulness",
+      img: "/images/meditation.jpg",
+      desc: "Improve focus and reduce stress with guided practices.",
+      path: "/#yoga",
+    },
+    {
+      id: 7,
+      title: "Study Planner",
+      img: "/images/motive2.png",
+      desc: "Organize your schedule and tracking for every exam.",
+      path: "/#todo-app",
+    },
+    {
+      id: 8,
+      title: "Journal Support",
+      img: "/images/SplitImage.jpeg",
+      desc: "Build confidence and keep mental wellness in check.",
+      path: "/#private-journal",
     },
   ];
 
@@ -233,7 +259,11 @@ export const Dashboard = () => {
                 <button
                   type="button"
                   className="servicebtn"
-                  onClick={() => setCurrentExam(service.examKey)}
+                  onClick={() =>
+                    service.path
+                      ? navigate(service.path)
+                      : setCurrentExam(service.examKey)
+                  }
                 >
                   Explore {service.title}
                 </button>
@@ -255,10 +285,6 @@ export const Dashboard = () => {
       {/* Components Section */}
       <div id="book-store">
         <BookStore />
-      </div>
-
-      <div id="todo-app">
-        <TodoApp />
       </div>
 
       <div id="ai-chatbot">

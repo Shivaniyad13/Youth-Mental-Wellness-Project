@@ -1,0 +1,11 @@
+[
+  {
+    "_id": "6a32fc960ce2594cfe4a49ee",
+    "name": "Test User",
+    "email": "test_1781726358161@example.com",
+    "mobile": "1234567890",
+    "password": "$2b$10$1WG6x4CjrjCQ7O/ufe6dOuJIOjowwhCIfFzIzYA4KSGXgIhwJWdN.",
+    "createdAt": "2026-06-17T19:59:18.448Z",
+    "updatedAt": "2026-06-17T19:59:18.448Z"
+  }
+]

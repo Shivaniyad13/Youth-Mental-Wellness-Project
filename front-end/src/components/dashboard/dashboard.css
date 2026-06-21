@@ -161,6 +161,37 @@
   padding: 0 1rem;
 }
 
+.wellness-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.wellness-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+  .wellness-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .wellness-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 992px) {
   .main {
     grid-template-columns: 1fr;

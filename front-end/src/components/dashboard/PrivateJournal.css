@@ -1,0 +1,59 @@
+.private-journal-container {
+  width: 100%;
+  margin: 0;
+  background-color: #fff8f0;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.private-journal-container h2 {
+  text-align: center;
+  color: #102a43;
+  margin-bottom: 10px;
+}
+
+.private-journal-container textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #e6e9ef;
+  font-size: 14px;
+}
+
+.private-journal-container button {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--accent, #ff6f00);
+  color: #102a43;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-suggestion {
+  margin-top: 12px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eef2f7;
+}
+
+.private-journal-container ul {
+  margin-top: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+  list-style: none;
+  padding-left: 0;
+}
+
+.private-journal-container ul li {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}

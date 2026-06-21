@@ -287,16 +287,18 @@ export const Dashboard = () => {
         <BookStore />
       </div>
 
-      <div id="ai-chatbot">
-        <AIWellnessChatbot />
-      </div>
+      <div className="wellness-row" role="region" aria-label="Wellness tools">
+        <section id="ai-chatbot" className="wellness-card">
+          <AIWellnessChatbot />
+        </section>
 
-      <div id="mood-tracking">
-        <MoodTracking />
-      </div>
+        <section id="mood-tracking" className="wellness-card">
+          <MoodTracking />
+        </section>
 
-      <div id="private-journal">
-        <PrivateJournal />
+        <section id="private-journal" className="wellness-card">
+          <PrivateJournal />
+        </section>
       </div>
 
       <ArtGallery />

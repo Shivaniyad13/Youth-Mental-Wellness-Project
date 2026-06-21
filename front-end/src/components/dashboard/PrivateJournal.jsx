@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './PrivateJournal.css';
 
 const PrivateJournal = () => {
   const [journalText, setJournalText] = useState('');

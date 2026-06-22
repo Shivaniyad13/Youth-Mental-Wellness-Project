@@ -33,7 +33,7 @@
 .footer-contact h3 {
   font-size: 1.15rem;
   margin-bottom: 20px;
-  color: var(--primary-1);
+  color: var(--text-on-primary);
   position: relative;
   padding-bottom: 10px;
 }
@@ -65,7 +65,7 @@
 .footer-link-item a,
 .footer-exams a,
 .footer-link {
-  color: #021b21 !important;
+  color: var(--text-on-primary) !important;
   text-decoration: none;
   transition: color 0.3s ease;
   display: inline-flex;
@@ -89,12 +89,12 @@
   align-items: center;
   gap: 0.85rem;
   margin-bottom: 15px;
-  color: #cbd5e1;
+  color: var(--text-on-primary);
 }
 
 .contact-item svg,
 .contact-item i {
-  color: var(--primary-1);
+  color: var(--text-on-primary);
   min-width: 24px;
 }
 
@@ -113,7 +113,7 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: #ecf0f1;
+  color: var(--text-on-primary);
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
@@ -169,7 +169,7 @@
   border-radius: 999px;
   border: none;
   background: #ff6f00;
-  color: #102a43;
+  color: #69a0d3;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.25s ease;
@@ -192,7 +192,7 @@
 }
 
 .footer-bottom-content p {
-  color: #cbd5e1;
+  color: #ef9642;
   margin: 0;
 }
 
@@ -223,10 +223,12 @@
   .footer-contact h3:after {
     left: 50%;
     transform: translateX(-50%);
+    color:#ef9642
   }
 
   .contact-item {
     justify-content: center;
+    color :#ef9642
   }
 
   .footer-bottom-content {

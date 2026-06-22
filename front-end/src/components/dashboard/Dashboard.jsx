@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import TributePage from "./TributePage";
 // import TodoApp from "../Todoapp/TodoApp.jsx";
@@ -18,6 +18,7 @@ import PrivateJournal from "./PrivateJournal";
 export const Dashboard = () => {
   const [currentExam, setCurrentExam] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle ?exam= param
   useEffect(() => {
@@ -260,9 +261,7 @@ export const Dashboard = () => {
                   type="button"
                   className="servicebtn"
                   onClick={() =>
-                    service.path
-                      ? navigate(service.path)
-                      : setCurrentExam(service.examKey)
+                    navigate(service.path || `/?exam=${service.examKey}`)
                   }
                 >
                   Explore {service.title}
